@@ -1,0 +1,33 @@
+﻿@model WebEscuelaMVC.Models.Aula
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    <h1>Registrar Aulas</h1>
+    @using (Html.BeginForm("Create", "Aula", FormMethod.Post))
+    {
+        <p>
+            @Html.LabelFor(model=>model.Numero)
+            @Html.TextBoxFor(model=>model.Numero)
+            @Html.ValidationMessageFor(model=>model.Numero)
+        </p>
+        <p>
+            @Html.LabelFor(model=>model.Estado)
+            @Html.TextBoxFor(model=>model.Estado)
+            @Html.ValidationMessageFor(model=>model.Estado)
+        </p>
+
+        <input type="submit" action="Create" />
+
+        @Html.ActionLink("Volver a Index", "Index", "Aula")
+    }
+</body>
+</html>

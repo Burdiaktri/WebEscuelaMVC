@@ -28,7 +28,7 @@ namespace WebEscuelaMVC.Controllers
         public ActionResult Create()
         {
             Aula aulas = new Aula();
-            return View("Register", aulas);
+            return View("Create", aulas);
         }
 
         [HttpPost]
@@ -53,7 +53,7 @@ namespace WebEscuelaMVC.Controllers
             }
             else
             {
-                return View("Detalle", aulas);
+                return View("Details", aulas);
             }
         }
 
@@ -105,20 +105,8 @@ namespace WebEscuelaMVC.Controllers
         }
 
 
-        [HttpPost]
-        [ActionName("Edit")]
-        public ActionResult EditConfirmed(Aula aulas)
-        {
-            if (ModelState.IsValid)
-            {
-                context.Entry(aulas).State = EntityState.Modified;
-                context.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(aulas);
-        }
 
-        private Aula TraerUnAula(int id)
+    private Aula TraerUnAula(int id)
         {
             return context.Aulas.Find(id);
         }
