@@ -1,16 +1,9 @@
 ﻿@model WebEscuelaMVC.Models.Aula
 @{
-    Layout = null;
+    ViewData["Title"] = "Create Aula";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Create</title>
-</head>
-<body>
     <h1>Registrar Aulas</h1>
     @using (Html.BeginForm("Create", "Aula", FormMethod.Post))
     {
@@ -29,5 +22,3 @@
 
         @Html.ActionLink("Volver a Index", "Index", "Aula")
     }
-</body>
-</html>

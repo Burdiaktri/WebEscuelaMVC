@@ -1,16 +1,8 @@
 ﻿@model WebEscuelaMVC.Models.Aula
 @{
-    Layout = null;
+    ViewData["Title"] = "Details";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-<body>
         <h2>Ver Detalle</h2>
     @Html.ActionLink("Volver a index", "Index", "Aula")
 
@@ -23,5 +15,3 @@
         @Html.DisplayFor(model=>model.Estado)
     </p>
 
-</body>
-</html>
